@@ -54,7 +54,19 @@ def move_player(x_pos, y_pos, dir_str):
     return x_pos, y_pos
 
 def print_options(legal_options):
-    #Prints legal options for user
+    """
+    Argument: all lowercase options
+    Prints options
+    """
+    output_str = 'You can travel:'
+    multiple = False
+
+    if 'n' in legal_options:
+        output_str += ' (N)orth'
+
+    
+
+    
 
 
 x_pos = 1
