@@ -34,7 +34,6 @@ def check_directions(x_pos, y_pos):
 
     return out_str
 
-
 def move_player(x_pos, y_pos, dir_str):
 
     """
@@ -58,24 +57,25 @@ def print_options(legal_options):
     Argument: all lowercase options
     Prints options
     """
-    output_str = 'You can travel:'
+    directions_str = 'You can travel:'
     multiple = False
     
     for ch in legal_options:
         if multiple:
-            output_str += ' or'
+            directions_str += ' or'
         if ch == 'n':
-            output_str += ' (N)orth'
+            directions_str += ' (N)orth'
         if ch == 's':
-            output_str += ' (S)outh'
+            directions_str += ' (S)outh'
         if ch == 'e':
-            output_str += ' (E)ast'
+            directions_str += ' (E)ast'
         if ch == 'w':
-            output_str += ' (W)est'
+            directions_str += ' (W)est'
         multiple = True
-    output_str += '.'
+        #Sets the multiple value to True after every iteration of the loop. So every added direction after the first gets ' or' prefixed
+    directions_str += '.'
 
-    print(output_str)
+    print(directions_str)
     
 
     
@@ -94,7 +94,7 @@ def game_loop():
         direction = input('Direction: ')
         direction = direction.lower()
 
-        if len(direction) ==1 and direction in legal_options:
+        if len(direction) == 1 and direction in legal_options:
             x_pos, y_pos = move_player(x_pos, y_pos, direction)
 
         else:
