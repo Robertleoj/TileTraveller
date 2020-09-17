@@ -60,9 +60,20 @@ def print_options(legal_options):
     """
     output_str = 'You can travel:'
     multiple = False
-
-    if 'n' in legal_options:
-        output_str += ' (N)orth'
+    
+    for ch in legal_options:
+        if multiple:
+            output_str += ' or'
+        if ch == 'n':
+            output_str += ' (N)orth'
+        if ch == 's':
+            output_str += ' (S)outh'
+        if ch == 'e':
+            output_str += ' (E)ast'
+        if ch == 'w':
+            output_str += ' (W)est'
+        multiple = True
+    return output_str
 
     
 
