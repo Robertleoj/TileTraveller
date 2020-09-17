@@ -50,7 +50,7 @@ def move_player(x_pos, y_pos, dir_str):
     elif dir_str == "e":
         x_pos += 1
     else:
-        x_pos += 1
+        x_pos -= 1
     return x_pos, y_pos
 
 def print_options(legal_options):
